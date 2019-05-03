@@ -16,30 +16,32 @@ html {
 
 i {
   color: #363636;
-}
-
-i:hover {
-  color: gray;
+  &:hover {
+    color: gray;
+  }
 }
 
 .navbar-link {
   color: #363636;
-}
-
-.navbar-link:hover {
-  color: gray;
+  &:hover {
+    color: gray;
+  }
 }
 
 .navbar-item {
   color: #363636 !important;
+  &:hover {
+    color: gray !important;
+  }
 }
 
-.navbar-item:hover {
-  color: gray !important;
-}
-
-.navbar-end > a:hover {
-  color: gray;
+.navbar-end {
+  a {
+    color: #363636;
+    &:hover {
+      color: gray;
+    }
+  }
 }
 
 .pl {

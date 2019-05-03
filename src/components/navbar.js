@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const Navbar = props => {
   return (
@@ -19,28 +20,31 @@ const Navbar = props => {
         className="navbar-menu has-text-centered"
       >
         <div className="navbar-end">
-          <a className="navbar-item" href="/#">
+          <Link className="navbar-item" to="/">
             <span>Contact</span>
-          </a>
-          <a className="navbar-item" href="#skills">
+          </Link>
+          <Link className="navbar-item" to="/#skills">
             <span>Skills</span>
-          </a>
+          </Link>
           <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link is-arrowless" href="#projects">
+            <Link className="navbar-link is-arrowless" to="/#projects">
               Projects
-            </a>
+            </Link>
             <div className="navbar-dropdown is-right is-boxed">
-              <a className="navbar-item" href="#cryptocurrency">
+              <Link className="navbar-item" to="/#cryptocurrency">
                 Cryptocurrency Social Platform
-              </a>
-              <a className="navbar-item" href="#chat-app">
+              </Link>
+              <Link className="navbar-item" to="/#chat-app">
                 Anonymous Chat Application
-              </a>
-              <a className="navbar-item" href="#car-marketplace">
+              </Link>
+              <Link className="navbar-item" to="/#car-marketplace">
                 Car Rental Marketplace
-              </a>
+              </Link>
             </div>
           </div>
+          <Link className="navbar-item" to="/blog">
+            <span>Blog</span>
+          </Link>
         </div>
       </div>
     </nav>

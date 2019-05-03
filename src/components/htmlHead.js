@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 const HTMLHeader = props => {
   return (
     <Helmet>
+      <title>hirokicodes</title>
       <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
