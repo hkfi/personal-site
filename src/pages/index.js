@@ -1,7 +1,20 @@
 import React from "react"
 import Layout from "../components/layout"
+import { graphql, useStaticQuery } from "gatsby"
 
 export default () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulSkills(sort: { fields: updatedAt, order: ASC }) {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Layout>
       {/* Header */}
@@ -74,34 +87,9 @@ export default () => {
               </div>
               <div className="column">
                 <h1 className="title">Frameworks/Libraries/Tools</h1>
-                <span className="tag">Git</span>
-                <span className="tag">HTML5</span>
-                <span className="tag">CSS3</span>
-                <span className="tag">Sass</span>
-                <span className="tag">Bulma</span>
-                <span className="tag">Bootstrap</span>
-                <span className="tag">Node.js</span>
-                <span className="tag">Express.js</span>
-                <span className="tag">jQuery</span>
-                <span className="tag">Vue.js</span>
-                <span className="tag">Nuxt.js</span>
-                <span className="tag">React.js</span>
-                <span className="tag">Next.js</span>
-                <span className="tag">Gatsby.js</span>
-                <span className="tag">D3.js</span>
-                <span className="tag">Jest</span>
-                <span className="tag">Ruby on Rails</span>
-                <span className="tag">MongoDB</span>
-                <span className="tag">SQL</span>
-                <span className="tag">PostgreSQL</span>
-                <span className="tag">GraphQL</span>
-                <span className="tag">Prisma</span>
-                <span className="tag">Apollo</span>
-                <span className="tag">Amazon DynamoDB</span>
-                <span className="tag">AWS Lambda</span>
-                <span className="tag">AWS API Gateway</span>
-                <span className="tag">Docker</span>
-                <span className="tag">Heroku</span>
+                {data.allContentfulSkills.edges.map(edge => {
+                  return <span className="tag">{edge.node.name}</span>
+                })}
               </div>
             </div>
           </div>
