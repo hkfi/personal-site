@@ -6,10 +6,12 @@ import HTMLHeader from "./htmlHead"
 
 const Layout = props => {
   return (
-    <div>
-      <HTMLHeader />
-      <Navbar />
-      {props.children}
+    <div id="page-container">
+      <div id="content-wrap">
+        <HTMLHeader />
+        <Navbar />
+        {props.children}
+      </div>
       <Footer />
     </div>
   )
