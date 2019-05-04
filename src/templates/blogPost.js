@@ -29,12 +29,24 @@ const BlogPost = props => {
 
   return (
     <Layout>
-      <h1>{props.data.contentfulBlogPost.title}</h1>
-      <p>{props.data.contentfulBlogPost.publishedDate}</p>
-      {documentToReactComponents(
-        props.data.contentfulBlogPost.body.json,
-        options
-      )}
+      <section className="section">
+        <h1 className="title is-3 has-text-centered">
+          {props.data.contentfulBlogPost.title}
+        </h1>
+        <p className="is-size-6 has-text-centered">
+          {props.data.contentfulBlogPost.publishedDate}
+        </p>
+        <div className="columns is-mobile">
+          <div className="column is-three-fifths is-offset-one-fifth">
+            <p className="is-size-5">
+              {documentToReactComponents(
+                props.data.contentfulBlogPost.body.json,
+                options
+              )}
+            </p>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

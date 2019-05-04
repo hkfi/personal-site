@@ -30,10 +30,12 @@ export default () => {
                     <div className="blog-list-card">
                       <div className="level">
                         <div className="level-left">
-                          <span className="title">{edge.node.title}</span>
+                          <span className="subtitle is-3">
+                            {edge.node.title}
+                          </span>
                         </div>
                         <div className="level-right">
-                          <span className="subtitle">
+                          <span className="subtitle is-5">
                             {edge.node.publishedDate}
                           </span>
                         </div>
