@@ -1,14 +1,20 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import SkillsSection from "../components/skillsSection"
 
 export default () => {
-  const data = useStaticQuery(graphql`
+  const recentProjectsData = useStaticQuery(graphql`
     query {
-      allContentfulSkills(sort: { fields: updatedAt, order: ASC }) {
+      allContentfulRecentProjects(sort: { fields: updatedAt, order: ASC }) {
         edges {
           node {
             name
+            languageAndTechnologies
+            description {
+              json
+            }
           }
         }
       }
@@ -86,93 +92,34 @@ export default () => {
                 </a>
               </div>
               <div className="column">
-                <h1 className="title">Frameworks/Libraries/Tools</h1>
-                {data.allContentfulSkills.edges.map(edge => {
-                  return (
-                    <span className="tag" key={edge.node.name}>
-                      {edge.node.name}
-                    </span>
-                  )
-                })}
+                <SkillsSection />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Recent Projects */}
       <section className="section has-text-centered" id="projects">
         <div className="section-heading">
-          <h3 className="title is-2">Projects</h3>
+          <h3 className="title is-2">Recent Projects</h3>
         </div>
-
-        {/* Crypto Social Dashboard */}
-        <section className="section has-text-centered" id="cryptocurrency">
-          <div className="section-heading">
-            <h3 className="title is-2">Cryptocurrency Social Platform</h3>
-            <div className="container">
-              <p>
-                A social platform to keep track of the latest cryptocurrency
-                trends and news
-              </p>
-              <a
-                href="https://github.com/hirokicodes/crypto-graphql-prisma"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Back-end Code
-              </a>
-              <a
-                href="https://github.com/hirokicodes/vue-crypto-dashboard"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Front-end Code
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Golang Chat App */}
-        <section className="section has-text-centered" id="chat-app">
-          <div className="section-heading">
-            <h3 className="title is-2">Golang Chat App</h3>
-            <div className="container">
-              <p>A place to chat with other people</p>
-              <a
-                href="https://github.com/hirokicodes/golang-chat-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Back-end Code
-              </a>
-              <a
-                href="https://github.com/hirokicodes/golang-chat-app-front"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Front-end Code
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Car Rental Marketplace */}
-        <section className="section has-text-centered" id="car-marketplace">
-          <div className="section-heading">
-            <h3 className="title is-2">Car Rental Marketplace</h3>
-            <div className="container">
-              <p>An Airbnb for cars</p>
-              <a
-                href="https://github.com/jphoga/super_cars"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Code
-              </a>
-            </div>
-          </div>
-        </section>
+        {recentProjectsData.allContentfulRecentProjects.edges.map(edge => {
+          return (
+            <section className="section has-text-centered" id="cryptocurrency">
+              <div className="section-heading">
+                <h3 className="title is-3">{edge.node.name}</h3>
+                <div className="container">
+                  <div class="columns is-mobile">
+                    <div class="column is-three-fifths is-offset-one-fifth">
+                      {documentToReactComponents(edge.node.description.json)}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )
+        })}
       </section>
     </Layout>
   )
