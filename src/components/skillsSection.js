@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 export default () => {
-  const skillsData = useStaticQuery(graphql`
+  const { allContentfulSkills } = useStaticQuery(graphql`
     query {
       allContentfulSkills(sort: { fields: updatedAt, order: ASC }) {
         edges {
@@ -17,7 +17,7 @@ export default () => {
   return (
     <React.Fragment>
       <h1 className="title">Frameworks/Libraries/Tools</h1>
-      {skillsData.allContentfulSkills.edges.map(edge => {
+      {allContentfulSkills.edges.map(edge => {
         return (
           <span className="tag" key={edge.node.name}>
             {edge.node.name}

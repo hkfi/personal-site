@@ -5,9 +5,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import SkillsSection from "../components/skillsSection"
 
 export default () => {
-  const recentProjectsData = useStaticQuery(graphql`
+  const { allContentfulRecentProjects } = useStaticQuery(graphql`
     query {
-      allContentfulRecentProjects(sort: { fields: updatedAt, order: ASC }) {
+      allContentfulRecentProjects(sort: { fields: createdAt, order: ASC }) {
         edges {
           node {
             name
@@ -104,11 +104,21 @@ export default () => {
         <div className="section-heading">
           <h3 className="title is-2">Recent Projects</h3>
         </div>
-        {recentProjectsData.allContentfulRecentProjects.edges.map(edge => {
+        {allContentfulRecentProjects.edges.map(edge => {
           return (
-            <section className="section has-text-centered" id="cryptocurrency">
+            <section
+              className="section has-text-centered"
+              id={`${edge.node.name.split(" ").join("")}`}
+            >
               <div className="section-heading">
                 <h3 className="title is-3">{edge.node.name}</h3>
+                {edge.node.languageAndTechnologies.map(name => {
+                  return (
+                    <span className="tag subtitle" key={name}>
+                      {name}
+                    </span>
+                  )
+                })}
                 <div className="container">
                   <div class="columns is-mobile">
                     <div class="column is-three-fifths is-offset-one-fifth">

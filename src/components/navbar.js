@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 
 const Navbar = () => {
   const [navbarBurgerStatus, setNavbarBurgerStatus] = useState("")
@@ -8,6 +8,22 @@ const Navbar = () => {
       ? setNavbarBurgerStatus("is-active")
       : setNavbarBurgerStatus("")
   }
+
+  const { allContentfulRecentProjects } = useStaticQuery(graphql`
+    query {
+      allContentfulRecentProjects(sort: { fields: createdAt, order: ASC }) {
+        edges {
+          node {
+            name
+            languageAndTechnologies
+            description {
+              json
+            }
+          }
+        }
+      }
+    }
+  `)
 
   return (
     <nav className="navbar is-fixed-top is-transparent">
@@ -39,15 +55,16 @@ const Navbar = () => {
               Projects
             </Link>
             <div className="navbar-dropdown is-right is-boxed">
-              <Link className="navbar-item" to="/#cryptocurrency">
-                Cryptocurrency Social Platform
-              </Link>
-              <Link className="navbar-item" to="/#chat-app">
-                Anonymous Chat Application
-              </Link>
-              <Link className="navbar-item" to="/#car-marketplace">
-                Car Rental Marketplace
-              </Link>
+              {allContentfulRecentProjects.edges.map(edge => {
+                return (
+                  <Link
+                    className="navbar-item"
+                    to={`/#${edge.node.name.split(" ").join("")}`}
+                  >
+                    {edge.node.name}
+                  </Link>
+                )
+              })}
             </div>
           </div>
           <Link className="navbar-item" to="/blog">
