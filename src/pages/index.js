@@ -88,7 +88,11 @@ export default () => {
               <div className="column">
                 <h1 className="title">Frameworks/Libraries/Tools</h1>
                 {data.allContentfulSkills.edges.map(edge => {
-                  return <span className="tag">{edge.node.name}</span>
+                  return (
+                    <span className="tag" key={edge.node.name}>
+                      {edge.node.name}
+                    </span>
+                  )
                 })}
               </div>
             </div>

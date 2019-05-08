@@ -1,13 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
-const Navbar = props => {
+const Navbar = () => {
+  const [navbarBurgerStatus, setNavbarBurgerStatus] = useState("")
+  function handleNavbarBurgerClick() {
+    navbarBurgerStatus === ""
+      ? setNavbarBurgerStatus("is-active")
+      : setNavbarBurgerStatus("")
+  }
+
   return (
     <nav className="navbar is-fixed-top is-transparent">
       <div className="navbar-brand">
         <div
-          className="navbar-burger burger"
+          className={`navbar-burger burger ${navbarBurgerStatus}`}
           data-target="navbarExampleTransparentExample"
+          onClick={handleNavbarBurgerClick}
         >
           <span />
           <span />
@@ -17,7 +25,7 @@ const Navbar = props => {
 
       <div
         id="navbarExampleTransparentExample"
-        className="navbar-menu has-text-centered"
+        className={`navbar-menu has-text-centered ${navbarBurgerStatus}`}
       >
         <div className="navbar-end">
           <Link className="navbar-item" to="/">
