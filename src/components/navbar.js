@@ -55,9 +55,10 @@ const Navbar = () => {
               Projects
             </Link>
             <div className="navbar-dropdown is-right is-boxed">
-              {allContentfulRecentProjects.edges.map(edge => {
+              {allContentfulRecentProjects.edges.map((edge, i) => {
                 return (
                   <Link
+                    key={i}
                     className="navbar-item"
                     to={`/#${edge.node.name.split(" ").join("")}`}
                   >

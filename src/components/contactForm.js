@@ -2,9 +2,10 @@ import React from "react"
 
 export default () => {
   return (
-    <div class="columns is-centered is-mobile">
-      <div class="column is-three-fifths">
-        <form action="POST" data-netlify="true" data-netlify-recaptcha="true">
+    <div className="columns is-centered is-mobile">
+      <div className="column is-three-fifths">
+        <form method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input hidden className="hidden" name="bot-field" />
           <div className="columns">
             <div className="column is-half">
               <div className="field">
@@ -50,8 +51,8 @@ export default () => {
 
           <div className="columns is-centered is-mobile">
             <div className="column is-half">
-              <div data-netlify-recaptcha="true" />
-              <button type="submit" class="button is-medium is-rounded">
+              <div data-netlify-recaptcha />
+              <button type="submit" className="button is-medium is-rounded">
                 Submit
               </button>
             </div>

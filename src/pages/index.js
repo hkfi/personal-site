@@ -105,11 +105,12 @@ export default () => {
         <div className="section-heading">
           <h3 className="title is-2">Recent Projects</h3>
         </div>
-        {allContentfulRecentProjects.edges.map(edge => {
+        {allContentfulRecentProjects.edges.map((edge, i) => {
           return (
             <section
               className="section has-text-centered"
               id={`${edge.node.name.split(" ").join("")}`}
+              key={i}
             >
               <div className="section-heading">
                 <h3 className="title is-3">{edge.node.name}</h3>
@@ -121,8 +122,8 @@ export default () => {
                   )
                 })}
                 <div className="container">
-                  <div class="columns is-mobile">
-                    <div class="column is-three-fifths is-offset-one-fifth">
+                  <div className="columns is-mobile">
+                    <div className="column is-three-fifths is-offset-one-fifth">
                       {documentToReactComponents(edge.node.description.json)}
                     </div>
                   </div>
