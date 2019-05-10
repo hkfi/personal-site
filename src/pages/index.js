@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import SkillsSection from "../components/skillsSection"
+import ContactForm from "../components/contactForm"
 
 export default () => {
   const { allContentfulRecentProjects } = useStaticQuery(graphql`
@@ -130,6 +131,18 @@ export default () => {
             </section>
           )
         })}
+      </section>
+
+      {/* Contact Form */}
+      <section className="section has-text-centered" id="contact">
+        <div className="section-heading">
+          <h3 className="title is-2">Contact</h3>
+        </div>
+        <section className="section">
+          <div className="container">
+            <ContactForm />
+          </div>
+        </section>
       </section>
     </Layout>
   )
