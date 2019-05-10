@@ -29,6 +29,9 @@ const Navbar = () => {
   return (
     <nav className="navbar is-fixed-top is-transparent">
       <div className="navbar-brand">
+        <Link className="navbar-item" to="/">
+          <img src={Logo} alt="Logo" />
+        </Link>
         <div
           className={`navbar-burger burger ${navbarBurgerStatus}`}
           data-target="navbarExampleTransparentExample"
@@ -44,12 +47,6 @@ const Navbar = () => {
         id="navbarExampleTransparentExample"
         className={`navbar-menu has-text-centered ${navbarBurgerStatus}`}
       >
-        <div className="navbar-start">
-          <Link className="navbar-item" to="/">
-            <img src={Logo} alt="Logo" />
-          </Link>
-        </div>
-
         <div className="navbar-end">
           <Link className="navbar-item" to="/#skills">
             <span>Skills</span>
