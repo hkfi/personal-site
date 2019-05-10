@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery } from "gatsby"
+import Logo from "../../static/logo.png"
 
 const Navbar = () => {
   const [navbarBurgerStatus, setNavbarBurgerStatus] = useState("")
@@ -43,10 +44,13 @@ const Navbar = () => {
         id="navbarExampleTransparentExample"
         className={`navbar-menu has-text-centered ${navbarBurgerStatus}`}
       >
-        <div className="navbar-end">
+        <div className="navbar-start">
           <Link className="navbar-item" to="/">
-            <span>Contact</span>
+            <img src={Logo} alt="Logo" />
           </Link>
+        </div>
+
+        <div className="navbar-end">
           <Link className="navbar-item" to="/#skills">
             <span>Skills</span>
           </Link>
@@ -68,6 +72,9 @@ const Navbar = () => {
               })}
             </div>
           </div>
+          <Link className="navbar-item" to="/#contact">
+            <span>Contact</span>
+          </Link>
           <Link className="navbar-item" to="/blog">
             <span>Blog</span>
           </Link>
