@@ -31,7 +31,7 @@ export default () => {
                     type="text"
                     placeholder="Email"
                   />
-                  <span className="icon is-small is-left has-text-success">
+                  <span className="icon is-small is-left">
                     <i className="fas fa-envelope" />
                   </span>
                 </div>

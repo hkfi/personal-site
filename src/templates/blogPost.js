@@ -38,12 +38,12 @@ const BlogPost = props => {
         </p>
         <div className="columns is-mobile">
           <div className="column is-three-fifths is-offset-one-fifth">
-            <p className="is-size-5">
+            <div className="is-size-5">
               {documentToReactComponents(
                 props.data.contentfulBlogPost.body.json,
                 options
               )}
-            </p>
+            </div>
           </div>
         </div>
       </section>
