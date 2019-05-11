@@ -55,42 +55,49 @@ export default () => {
           <div className="container">
             <div className="columns">
               <div className="column">
-                <h1 className="title">Programming Languages</h1>
-                <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="pl devicon-javascript-plain" />
-                </a>
-                <a
-                  href="https://www.typescriptlang.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="pl devicon-typescript-plain" />
-                </a>
-                <a
-                  href="https://golang.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="pl devicon-go-plain" />
-                </a>
-                <a
-                  href="https://www.python.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="pl devicon-python-plain" />
-                </a>
-                <a
-                  href="https://www.ruby-lang.org/en/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="pl devicon-ruby-plain" />
-                </a>
+                <h1 className="subtitle is-3">Programming Languages</h1>
+                <div className="columns is-mobile is-multiline is-centered">
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="column"
+                  >
+                    <i className="pl devicon-javascript-plain" />
+                  </a>
+                  <a
+                    href="https://www.typescriptlang.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="column"
+                  >
+                    <i className="pl devicon-typescript-plain" />
+                  </a>
+                  <a
+                    href="https://golang.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="column"
+                  >
+                    <i className="pl devicon-go-plain" />
+                  </a>
+                  <a
+                    href="https://www.python.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="column"
+                  >
+                    <i className="pl devicon-python-plain" />
+                  </a>
+                  <a
+                    href="https://www.ruby-lang.org/en/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="column"
+                  >
+                    <i className="pl devicon-ruby-plain" />
+                  </a>
+                </div>
               </div>
               <div className="column">
                 <SkillsSection />
@@ -113,19 +120,19 @@ export default () => {
               key={i}
             >
               <div className="section-heading">
-                <h3 className="title is-3">{edge.node.name}</h3>
-                {edge.node.languageAndTechnologies.map(name => {
-                  return (
-                    <span className="tag subtitle" key={name}>
-                      {name}
-                    </span>
-                  )
-                })}
-                <div className="container">
-                  <div className="columns is-mobile">
-                    <div className="column is-three-fifths is-offset-one-fifth">
-                      {documentToReactComponents(edge.node.description.json)}
-                    </div>
+                <h3 className="subtitle is-3">{edge.node.name}</h3>
+                <div className="subtitle">
+                  {edge.node.languageAndTechnologies.map(name => {
+                    return (
+                      <span className="tag" key={name}>
+                        {name}
+                      </span>
+                    )
+                  })}
+                </div>
+                <div className="columns">
+                  <div className="column is-three-fifths is-offset-one-fifth">
+                    {documentToReactComponents(edge.node.description.json)}
                   </div>
                 </div>
               </div>

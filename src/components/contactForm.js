@@ -2,7 +2,7 @@ import React from "react"
 
 export default () => {
   return (
-    <div className="columns is-centered is-mobile">
+    <div className="columns is-centered">
       <div className="column is-three-fifths">
         <form method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input hidden className="hidden" name="bot-field" />

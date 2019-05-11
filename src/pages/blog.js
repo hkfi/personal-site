@@ -22,7 +22,7 @@ export default () => {
       <section className="section has-text-centered">
         <div className="section-heading">
           <h3 className="title is-2">Blog</h3>
-          <div className="columns is-mobile">
+          <div className="columns">
             <div className="column is-three-fifths is-offset-one-fifth">
               {data.allContentfulBlogPost.edges.map((edge, i) => {
                 return (

@@ -36,7 +36,7 @@ const BlogPost = props => {
         <p className="is-size-6 has-text-centered">
           {props.data.contentfulBlogPost.publishedDate}
         </p>
-        <div className="columns is-mobile">
+        <div className="columns">
           <div className="column is-three-fifths is-offset-one-fifth">
             <div className="is-size-5">
               {documentToReactComponents(

@@ -16,7 +16,7 @@ export default () => {
 
   return (
     <React.Fragment>
-      <h1 className="title">Frameworks/Libraries/Tools</h1>
+      <h1 className="subtitle is-3">Frameworks / Libraries / Tools</h1>
       {allContentfulSkills.edges.map(edge => {
         return (
           <span className="tag" key={edge.node.name}>
