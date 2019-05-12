@@ -44,6 +44,24 @@ export default () => {
                 <i className="fab fa-github fa-2x" />
               </a>
             </span>
+            <span className="icon is-large">
+              <a
+                href="https://codepen.io/hirokicodes/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-codepen fa-2x" />
+              </a>
+            </span>
+            <span className="icon is-large">
+              <a
+                href="https://stackoverflow.com/users/11485944/hirokicodes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-stack-overflow fa-2x" />
+              </a>
+            </span>
           </div>
         </div>
       </section>

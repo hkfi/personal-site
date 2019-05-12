@@ -34,7 +34,7 @@ const Navbar = () => {
         </Link>
         <div
           className={`navbar-burger burger ${navbarBurgerStatus}`}
-          data-target="navbarExampleTransparentExample"
+          data-target="navbar"
           onClick={handleNavbarBurgerClick}
         >
           <span />
@@ -44,7 +44,7 @@ const Navbar = () => {
       </div>
 
       <div
-        id="navbarExampleTransparentExample"
+        id="navbar"
         className={`navbar-menu has-text-centered ${navbarBurgerStatus}`}
       >
         <div className="navbar-end">
@@ -55,7 +55,7 @@ const Navbar = () => {
             <Link className="navbar-link is-arrowless" to="/#projects">
               Projects
             </Link>
-            <div className="navbar-dropdown is-right is-boxed">
+            <div className="navbar-dropdown is-boxed">
               {allContentfulRecentProjects.edges.map((edge, i) => {
                 return (
                   <Link
