@@ -52,7 +52,7 @@ export default () => {
           <div className="columns is-centered is-mobile">
             <div className="column is-half">
               <div data-netlify-recaptcha />
-              <button type="submit" className="button is-medium is-rounded">
+              <button type="submit" className="button is-medium">
                 Submit
               </button>
             </div>

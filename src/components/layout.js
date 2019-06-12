@@ -1,5 +1,6 @@
 import React from "react"
 import "../styles/index.scss"
+import "../styles/theme.scss"
 import Navbar from "./navbar"
 import Footer from "./footer"
 import HTMLHeader from "./htmlHead"

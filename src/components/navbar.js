@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery } from "gatsby"
-import Logo from "../../static/logo.png"
 
 const Navbar = () => {
   const [navbarBurgerStatus, setNavbarBurgerStatus] = useState("")
@@ -8,6 +7,30 @@ const Navbar = () => {
     navbarBurgerStatus === ""
       ? setNavbarBurgerStatus("is-active")
       : setNavbarBurgerStatus("")
+  }
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme"))
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark")
+    }
+  }, [])
+
+  function toggleTheme() {
+    document.documentElement.classList.add("color-theme-in-transition")
+    if (theme === "dark") {
+      setTheme("light")
+      localStorage.setItem("theme", "light")
+      document.documentElement.removeAttribute("data-theme")
+    } else {
+      setTheme("dark")
+      localStorage.setItem("theme", "dark")
+      document.documentElement.setAttribute("data-theme", "dark")
+    }
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("color-theme-in-transition")
+    }, 1000)
   }
 
   const { allContentfulRecentProjects } = useStaticQuery(graphql`
@@ -30,7 +53,7 @@ const Navbar = () => {
     <nav className="navbar is-fixed-top is-transparent">
       <div className="navbar-brand">
         <Link className="navbar-item" to="/">
-          <img src={Logo} alt="Logo" />
+          <span className="logo">hirokicodes</span>
         </Link>
         <div
           className={`navbar-burger burger ${navbarBurgerStatus}`}
@@ -48,6 +71,13 @@ const Navbar = () => {
         className={`navbar-menu has-text-centered ${navbarBurgerStatus}`}
       >
         <div className="navbar-end">
+          <a className="navbar-item" onClick={toggleTheme}>
+            {theme === "light" ? (
+              <i className="fas fa-moon" />
+            ) : (
+              <i className="fas fa-sun" />
+            )}
+          </a>
           <Link className="navbar-item" to="/#skills">
             <span>Skills</span>
           </Link>

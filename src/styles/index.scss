@@ -5,6 +5,31 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--primaryBg);
+  color: var(--primaryText);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.subtitle,
+footer {
+  color: var(--primaryText) !important;
+}
+
+a {
+  color: var(--primaryTheme) !important;
+  &:hover {
+    color: var(--primaryThemeHover) !important;
+  }
+}
+
 #page-container {
   position: relative;
   min-height: 100vh;
@@ -24,7 +49,7 @@ footer {
 .blog-list-card {
   padding: 10px;
   &:hover {
-    background-color: #fafafa;
+    background-color: var(--activeSelectionBg);
   }
 }
 
@@ -35,35 +60,70 @@ footer {
 
 .tag {
   margin: 2px;
+  color: var(--tagText) !important;
+  background-color: var(--tagBg) !important;
+}
+
+input,
+textarea {
+  background-color: var(--primaryBg) !important;
+  color: var(--primaryText) !important;
+  &::placeholder {
+    color: var(--secondaryText) !important;
+  }
+  &:focus {
+    border-color: var(--primaryTheme) !important;
+    box-shadow: inset 0 0 2px var(--primaryTheme) !important;
+    outline: none !important;
+  }
+}
+
+.button {
+  border-color: var(--primaryTheme) !important;
+  background-color: var(--primaryBg) !important;
+  color: var(--primaryText) !important;
+  &:hover {
+    color: var(--primaryTheme) !important;
+  }
+}
+
+.logo {
+  font-weight: normal;
+  font-size: 24px;
+  color: var(--primaryText);
+  &:hover {
+    color: var(--secondaryText);
+  }
+}
+
+.navbar {
+  background-color: var(--primaryBg) !important;
 }
 
 i {
-  color: #363636;
+  color: var(--primaryText);
   &:hover {
     color: gray;
   }
 }
 
 .navbar-link {
-  color: #363636;
+  color: var(--primaryText) !important;
   &:hover {
-    color: gray;
+    color: var(--secondaryText) !important;
   }
+}
+
+.navbar-dropdown {
+  background-color: var(--primaryBg) !important;
+  border-radius: 0px !important;
 }
 
 .navbar-item {
-  color: #363636 !important;
+  color: var(--primaryText) !important;
+  font-weight: bold;
   &:hover {
-    color: gray !important;
-  }
-}
-
-.navbar-end {
-  a {
-    color: #363636;
-    &:hover {
-      color: gray;
-    }
+    color: var(--secondaryText) !important;
   }
 }
 
