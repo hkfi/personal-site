@@ -9,7 +9,12 @@ const Navbar = () => {
       : setNavbarBurgerStatus("")
   }
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme"))
+  let localStorageTheme = null
+  if (typeof window !== "undefined") {
+    localStorageTheme = localStorage.getItem("theme")
+  }
+
+  const [theme, setTheme] = useState(localStorageTheme)
 
   useEffect(() => {
     if (theme === "dark") {
