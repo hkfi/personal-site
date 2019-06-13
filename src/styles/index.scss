@@ -23,6 +23,13 @@ footer {
   color: var(--primaryText) !important;
 }
 
+.navbar-menu {
+  background: var(--primaryBg) !important;
+  &:hover {
+    background: var(--primaryBg) !important;
+  }
+}
+
 a {
   color: var(--primaryTheme) !important;
   &:hover {
@@ -111,6 +118,7 @@ i {
   color: var(--primaryText) !important;
   &:hover {
     color: var(--secondaryText) !important;
+    background: var(--primaryBg) !important;
   }
 }
 
@@ -124,6 +132,7 @@ i {
   font-weight: bold;
   &:hover {
     color: var(--secondaryText) !important;
+    background: var(--primaryBg) !important;
   }
 }
 
