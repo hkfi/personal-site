@@ -5,6 +5,12 @@ const HTMLHeader = props => {
   return (
     <Helmet>
       <title>hirokicodes</title>
+      <meta name="description" content="Full-Stack Developer" />
+      <meta
+        name="keywords"
+        content="hirokicodes, developer, software engineer, full-stack, JavaScript, GraphQL, Vue, React"
+      />
+      <meta name="author" content="hirokicodes" />
       <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
