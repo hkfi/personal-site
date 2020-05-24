@@ -29,7 +29,6 @@ export default () => {
         <div className="hero-body">
           <div className="container">
             <h1 className="title is-1">hirokicodes</h1>
-            <h2 className="subtitle is-3">Full Stack Developer</h2>
             <span className="icon is-large">
               <a href="mailto: hirokicodes@gmail.com">
                 <i className="fas fa-envelope fa-2x" />
