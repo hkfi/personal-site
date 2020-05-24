@@ -92,20 +92,20 @@ export default () => {
                     <i className="pl devicon-typescript-plain" />
                   </a>
                   <a
-                    href="https://golang.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="column"
-                  >
-                    <i className="pl devicon-go-plain" />
-                  </a>
-                  <a
                     href="https://www.python.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="column"
                   >
                     <i className="pl devicon-python-plain" />
+                  </a>
+                  <a
+                    href="https://golang.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="column"
+                  >
+                    <i className="pl devicon-go-plain" />
                   </a>
                   <a
                     href="https://www.ruby-lang.org/en/"
@@ -125,10 +125,10 @@ export default () => {
         </div>
       </section>
 
-      {/* Recent Projects */}
+      {/* Projects */}
       <section className="section has-text-centered" id="projects">
         <div className="section-heading">
-          <h3 className="title is-2">Recent Projects</h3>
+          <h3 className="title is-2">Projects</h3>
         </div>
         {allContentfulRecentProjects.edges.map((edge, i) => {
           return (
