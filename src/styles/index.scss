@@ -140,6 +140,11 @@ i {
   font-size: 5rem;
 }
 
+.code-snippet {
+  color: var(--preColor);
+  background-color: var(--preBackgroundColor);
+}
+
 // 1. Import the initial variables
 @import "~bulma/sass/utilities/initial-variables.sass";
 @import "~bulma/sass/utilities/functions.sass";
