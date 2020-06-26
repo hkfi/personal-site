@@ -1,11 +1,9 @@
 import React from "react"
 
-const Footer = props => {
+export const Footer = () => {
   return (
-    <footer className="has-text-centered">
+    <div className="has-text-centered">
       <div>Copyright © hirokicodes 2019</div>
-    </footer>
+    </div>
   )
 }
-
-export default Footer

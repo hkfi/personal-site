@@ -19,35 +19,20 @@ export default () => {
 
   return (
     <Layout>
-      <section className="section has-text-centered">
-        <div className="section-heading">
-          <h3 className="title is-2">Blog</h3>
-          <div className="columns">
-            <div className="column is-three-fifths is-offset-one-fifth">
-              {data.allContentfulBlogPost.edges.map((edge, i) => {
-                return (
-                  <Link to={`/blog/${edge.node.slug}`} key={i}>
-                    <div className="blog-list-card">
-                      <div className="level">
-                        <div className="level-left">
-                          <span className="subtitle is-3">
-                            {edge.node.title}
-                          </span>
-                        </div>
-                        <div className="level-right">
-                          <span className="subtitle is-5">
-                            {edge.node.publishedDate}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="text-text-primary text-5xl">Blog</div>
+
+      {data.allContentfulBlogPost.edges.map((edge, i) => {
+        return (
+          <Link
+            className="w-full max-w-4xl flex m-2 p-2 text-text-primary hover:text-theme-primary justify-between bg-background-secondary"
+            to={`/blog/${edge.node.slug}`}
+            key={i}
+          >
+            <div className="text-3xl">{edge.node.title}</div>
+            <div className="text-2xl">{edge.node.publishedDate}</div>
+          </Link>
+        )
+      })}
     </Layout>
   )
 }

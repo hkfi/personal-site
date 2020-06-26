@@ -35,24 +35,18 @@ const BlogPost = props => {
 
   return (
     <Layout>
-      <section className="section">
-        <h1 className="title is-3 has-text-centered">
-          {props.data.contentfulBlogPost.title}
-        </h1>
-        <p className="is-size-6 has-text-centered">
-          {props.data.contentfulBlogPost.publishedDate}
-        </p>
-        <div className="columns">
-          <div className="column is-three-fifths is-offset-one-fifth">
-            <div className="is-size-5">
-              {documentToReactComponents(
-                props.data.contentfulBlogPost.body.json,
-                options
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="text-4xl text-text-primary">
+        {props.data.contentfulBlogPost.title}
+      </div>
+      <div className="text-xl text-text-primary">
+        {props.data.contentfulBlogPost.publishedDate}
+      </div>
+      <div className="text-xl text-text-primary max-w-4xl">
+        {documentToReactComponents(
+          props.data.contentfulBlogPost.body.json,
+          options
+        )}
+      </div>
     </Layout>
   )
 }

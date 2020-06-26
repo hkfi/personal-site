@@ -1,9 +1,20 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 html.color-theme-in-transition,
 html.color-theme-in-transition *,
 html.color-theme-in-transition *:before,
 html.color-theme-in-transition *:after {
-  transition: all 250ms !important;
-  transition-delay: 0 !important;
+  transition: all 250ms;
+  transition-delay: 0;
 }
 
 html {
@@ -12,6 +23,7 @@ html {
   --primaryThemeHover: #1abc9c;
   --primaryBg: #fff;
   --primaryText: #4a4a4a;
+  --secondaryBg: #ebebeb;
   --secondaryText: #7b7b7b;
   --primaryButtonText: #fff;
   --primaryBorderBg: #efefef;
@@ -29,6 +41,8 @@ html[data-theme="dark"] {
   --primaryThemeHover: #1abc9c;
   --primaryBg: #20232a;
   --primaryText: rgba(255, 255, 255, 0.8);
+  /* --secondaryBg: #212121; */
+  --secondaryBg: #2b2f38;
   --secondaryText: rgba(255, 255, 255, 0.6);
   --primaryButtonText: #fff;
   --primaryBorderBg: #292929;
@@ -38,4 +52,13 @@ html[data-theme="dark"] {
   --tagText: #20232a;
   --preColor: rgba(255, 255, 255, 0.8);
   --preBackgroundColor: #2b2f38;
+}
+
+a:hover {
+  color: var(--primaryThemeHover);
+}
+
+.code-snippet {
+  color: var(--preColor);
+  background-color: var(--preBackgroundColor);
 }

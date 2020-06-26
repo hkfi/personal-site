@@ -14,19 +14,21 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
-    "bulma": "^0.7.5",
     "gatsby": "^2.22.9",
+    "gatsby-plugin-postcss": "^2.3.6",
     "gatsby-plugin-react-helmet": "^3.3.2",
-    "gatsby-plugin-sass": "^2.3.2",
+    "gatsby-plugin-transition-link": "^1.20.2",
     "gatsby-source-contentful": "^2.3.12",
-    "node-sass": "^4.14.1",
+    "gsap": "^3.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.10.0"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "tailwindcss": "^1.4.6"
   },
   "repository": {
     "type": "git",
