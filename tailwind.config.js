@@ -15,6 +15,7 @@ module.exports = {
       background: {
         primary: "var(--primaryBg)",
         secondary: "var(--secondaryBg)",
+        tertiary: "var(--tertiaryBg)",
       },
       text: {
         primary: "var(--primaryText)",

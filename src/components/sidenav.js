@@ -78,6 +78,7 @@ export const SideNav = () => {
         {sideNavButtons.map(button => {
           return (
             <AniLink
+              key={button.name}
               fade
               duration={0.4}
               to={button.route}

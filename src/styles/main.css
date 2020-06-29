@@ -25,6 +25,7 @@ html {
   --primaryText: #4a4a4a;
   --secondaryBg: #ebebeb;
   --secondaryText: #7b7b7b;
+  --tertiaryBg: #f7f7f7;
   --primaryButtonText: #fff;
   --primaryBorderBg: #efefef;
   --activeSelectionBg: rgba(162, 162, 162, 0.1);
@@ -44,6 +45,7 @@ html[data-theme="dark"] {
   /* --secondaryBg: #212121; */
   --secondaryBg: #2b2f38;
   --secondaryText: rgba(255, 255, 255, 0.6);
+  --tertiaryBg: #444852;
   --primaryButtonText: #fff;
   --primaryBorderBg: #292929;
   --activeSelectionBg: rgba(0, 0, 0, 0.18);
