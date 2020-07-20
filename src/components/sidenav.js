@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import { NavButton } from "./navbutton"
 import {
   RiHomeLine,
   RiPencilLine,
@@ -41,25 +42,25 @@ export const SideNav = () => {
   }
 
   const sideNavButtons = [
-    { route: "/", name: "home", icon: <RiHomeLine className="text-3xl" /> },
+    { route: "/", name: "Home", icon: <RiHomeLine className="text-3xl" /> },
     {
       route: "/skills",
-      name: "skills",
+      name: "Skills",
       icon: <RiToolsLine className="text-3xl" />,
     },
     {
       route: "/projects",
-      name: "projects",
+      name: "Projects",
       icon: <RiEyeLine className="text-3xl" />,
     },
     {
       route: "/blog",
-      name: "blog",
+      name: "Blog",
       icon: <RiPencilLine className="text-3xl" />,
     },
     {
       route: "/contact",
-      name: "contact",
+      name: "Contact",
       icon: <RiMailLine className="text-3xl" />,
     },
   ]
@@ -76,17 +77,7 @@ export const SideNav = () => {
       </button>
       <div className="flex-grow flex flex-col justify-center items-center w-full">
         {sideNavButtons.map(button => {
-          return (
-            <AniLink
-              key={button.name}
-              fade
-              duration={0.4}
-              to={button.route}
-              className="w-full self-center text-text-primary hover:text-theme-primary py-5 flex justify-center"
-            >
-              {button.icon}
-            </AniLink>
-          )
+          return <NavButton key={button.name} button={button} />
         })}
       </div>
     </div>

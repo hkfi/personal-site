@@ -22,7 +22,7 @@ export default () => {
 
   return (
     <Layout>
-      <div className="text-text-primary text-5xl">Projects</div>
+      <div className="text-theme-primary text-5xl">Projects</div>
 
       {allContentfulRecentProjects.edges.map((edge, i) => {
         return (
@@ -35,7 +35,7 @@ export default () => {
               {edge.node.languageAndTechnologies.map(name => {
                 return (
                   <div
-                    className="rounded m-1 p-1 bg-background-tertiary text-text-primary"
+                    className="rounded m-1 p-1 bg-background-tag text-text-primary"
                     key={name}
                   >
                     {name}

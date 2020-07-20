@@ -20,7 +20,7 @@ export default () => {
 
   return (
     <Layout>
-      <div className="text-text-primary text-5xl">Blog</div>
+      <div className="text-theme-primary text-5xl">Blog</div>
 
       {data.allContentfulBlogPost.edges.map((edge, i) => {
         return (

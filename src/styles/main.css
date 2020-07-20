@@ -5,8 +5,15 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  width: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16a085;
 }
 
 html.color-theme-in-transition,
@@ -21,19 +28,19 @@ html {
   /* global colors */
   --primaryTheme: #16a085;
   --primaryThemeHover: #1abc9c;
-  --primaryBg: #fff;
+  --primaryBg: #ebebeb;
   --primaryText: #4a4a4a;
-  --secondaryBg: #ebebeb;
+  --secondaryBg: #dadada;
   --secondaryText: #7b7b7b;
   --tertiaryBg: #f7f7f7;
   --primaryButtonText: #fff;
   --primaryBorderBg: #efefef;
   --activeSelectionBg: rgba(162, 162, 162, 0.1);
   --primaryShadowBg: rgba(204, 204, 204, 0.7);
-  --tagBg: whitesmoke;
+  --tagBg: #f7f7f7;
   --tagText: #212121;
   --preColor: #4a4a4a;
-  --preBackgroundColor: whitesmoke;
+  --preBackgroundColor: #e1e1e1;
 }
 
 html[data-theme="dark"] {
@@ -50,7 +57,7 @@ html[data-theme="dark"] {
   --primaryBorderBg: #292929;
   --activeSelectionBg: rgba(0, 0, 0, 0.18);
   --primaryShadowBg: rgba(8, 8, 8, 0.7);
-  --tagBg: rgba(255, 255, 255, 0.8);
+  --tagBg: #444852;
   --tagText: #20232a;
   --preColor: rgba(255, 255, 255, 0.8);
   --preBackgroundColor: #2b2f38;

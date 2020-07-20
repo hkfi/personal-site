@@ -5,7 +5,7 @@ import HTMLHeader from "./htmlHead"
 import { SideNav } from "./sidenav"
 import { TopNav } from "./topnav"
 
-const Layout = props => {
+const Layout = (props) => {
   return (
     <div className="h-screen flex flex-col md:flex-row bg-background-primary">
       <HTMLHeader />

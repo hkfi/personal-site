@@ -18,7 +18,7 @@ export default () => {
 
   return (
     <Layout>
-      <div className="text-5xl text-text-primary">Skills</div>
+      <div className="text-5xl text-theme-primary">Skills</div>
       <div className="flex flex-col justify-center items-center h-full">
         <div className="text-xl text-text-primary text-center">
           I mostly use technologies around JavaScript, TypeScript and Node.js

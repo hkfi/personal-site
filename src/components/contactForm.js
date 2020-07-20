@@ -12,7 +12,7 @@ export const ContactForm = () => {
         <div className="flex">
           <div className="mb-4 w-1/2 p-1">
             <label
-              for="name"
+              htmlFor="name"
               className="block text-text-primary text-sm font-bold mb-2"
             >
               Name
@@ -27,7 +27,7 @@ export const ContactForm = () => {
           </div>
           <div className="mb-4 w-1/2 p-1">
             <label
-              for="email"
+              htmlFor="email"
               className="block text-text-primary text-sm font-bold mb-2"
             >
               Email
@@ -44,7 +44,7 @@ export const ContactForm = () => {
         <div className="mb-6">
           <div className="flex justify-between">
             <label
-              for="message"
+              htmlFor="message"
               className="block text-text-primary text-sm font-bold mb-2"
             >
               Message

@@ -16,6 +16,7 @@ module.exports = {
         primary: "var(--primaryBg)",
         secondary: "var(--secondaryBg)",
         tertiary: "var(--tertiaryBg)",
+        tag: "var(--tagBg)",
       },
       text: {
         primary: "var(--primaryText)",

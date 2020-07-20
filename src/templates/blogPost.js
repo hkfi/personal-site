@@ -17,7 +17,7 @@ export const query = graphql`
   }
 `
 
-const BlogPost = props => {
+const BlogPost = ({ data }) => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: node => {
@@ -35,17 +35,14 @@ const BlogPost = props => {
 
   return (
     <Layout>
-      <div className="text-4xl text-text-primary">
-        {props.data.contentfulBlogPost.title}
+      <div className="text-4xl text-theme-primary">
+        {data.contentfulBlogPost.title}
       </div>
-      <div className="text-xl text-text-primary">
-        {props.data.contentfulBlogPost.publishedDate}
+      <div className="text-xl text-text-secondary">
+        {data.contentfulBlogPost.publishedDate}
       </div>
       <div className="text-xl text-text-primary max-w-4xl">
-        {documentToReactComponents(
-          props.data.contentfulBlogPost.body.json,
-          options
-        )}
+        {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
       </div>
     </Layout>
   )
