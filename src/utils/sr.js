@@ -1,7 +1,6 @@
 import ScrollReveal from "scrollreveal"
 
-const isSSR = typeof window === "undefined"
-export const sr = isSSR ? null : ScrollReveal()
+export const sr = window ? null : ScrollReveal()
 
 export const srConfig = (delay = 200) => ({
   origin: "bottom",
