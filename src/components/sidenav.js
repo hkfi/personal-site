@@ -66,7 +66,7 @@ export const SideNav = () => {
   ]
 
   return (
-    <div className="h-full flex flex-col justify-center items-center bg-background-primary">
+    <div className="h-full fixed flex flex-col justify-center items-center bg-background-primary">
       <button
         className={`focus:outline-none text-3xl p-2 text-text-primary cursor-pointer ${
           theme === "light" ? " hover:text-purple-300" : "hover:text-yellow-300"

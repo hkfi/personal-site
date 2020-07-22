@@ -5,18 +5,18 @@ import HTMLHeader from "./htmlHead"
 import { SideNav } from "./sidenav"
 import { TopNav } from "./topnav"
 
-const Layout = (props) => {
+const Layout = props => {
   return (
-    <div className="h-screen flex flex-col md:flex-row bg-background-primary">
+    <div className="flex flex-col md:flex-row bg-background-primary">
       <HTMLHeader />
       <div className="w-full md:hidden">
         <TopNav />
       </div>
-      <div className="w-12 hidden md:block">
+      <div className="w-12 hidden md:block h-screen">
         <SideNav />
       </div>
-      <div className="w-full overflow-scroll h-full">
-        <div className="flex flex-col h-full items-center p-3">
+      <div className="w-full min-h-screen">
+        <div className="flex flex-col h-full items-center p-3 overflow-hidden">
           {props.children}
         </div>
       </div>
