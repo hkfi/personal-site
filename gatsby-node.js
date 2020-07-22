@@ -1,6 +1,6 @@
 const path = require("path")
 
-module.exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogTemplate = path.resolve("./src/templates/blogPost.js")
   const res = await graphql(`
@@ -24,4 +24,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+}
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /scrollreveal/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
 }
