@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import { DiJavascript1, DiDart, DiGo, DiPython, DiRuby } from "react-icons/di"
+import { sr, srConfig } from "../utils/sr"
+import { PageTitle } from "../components/pageTitle"
 
 export default () => {
   const { allContentfulSkills } = useStaticQuery(graphql`
@@ -16,10 +18,14 @@ export default () => {
     }
   `)
 
+  const revealTitle = useRef(null)
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig())
+  }, [])
   return (
     <Layout>
-      <div className="text-5xl text-theme-primary">Skills</div>
-      <div className="flex flex-col justify-center items-center h-full">
+      <PageTitle title={"Skills"} />
+      <div className="flex flex-col justify-center items-center h-full max-w-4xl">
         <div className="text-xl text-text-primary text-center">
           I mostly use technologies around JavaScript, TypeScript and Node.js
           but I also have some experience with the things listed here.
@@ -34,10 +40,8 @@ export default () => {
           <DiPython className="hover:text-text-secondary" />
           <DiRuby className="hover:text-text-secondary" />
         </div>
-        <div className="text-4xl text-text-primary">
-          Frameworks / Libraries / Tools
-        </div>
-        <div className="w-3/5 flex flex-wrap text-text-primary justify-center">
+        <div className="text-4xl text-text-primary">Technologies</div>
+        <div className="flex flex-wrap text-text-primary justify-center">
           {allContentfulSkills.edges.map(edge => {
             return (
               <div

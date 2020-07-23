@@ -10,7 +10,7 @@ export const NavButton = ({ button, current }) => {
         fade
         duration={0.4}
         to={button.route}
-        className="w-full self-center transition duration-200 ease-in-out text-text-primary hover:text-theme-primary py-5 flex justify-center"
+        className="w-full self-center transition duration-200 ease-in-out hover:text-theme-primary py-5 flex justify-center"
         onMouseEnter={() => setButtonHovered(true)}
         onMouseLeave={() => setButtonHovered(false)}
       >

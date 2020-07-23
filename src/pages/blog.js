@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../components/layout"
+import { PageTitle } from "../components/pageTitle"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -20,7 +21,7 @@ export default () => {
 
   return (
     <Layout>
-      <div className="text-theme-primary text-5xl">Blog</div>
+      <PageTitle title={"Blog"} />
 
       {data.allContentfulBlogPost.edges.map((edge, i) => {
         return (

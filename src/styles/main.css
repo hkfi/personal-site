@@ -4,12 +4,17 @@
 
 @tailwind utilities;
 
+/* Needed to prevent scrollbar appearing from moving the page */
+html {
+  overflow-y: scroll;
+}
+
 ::-webkit-scrollbar {
   width: 0.25rem;
 }
 
 ::-webkit-scrollbar-track {
-  background:transparent;
+  background: var(--primaryBg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -41,6 +46,7 @@ html {
   --tagText: #212121;
   --preColor: #4a4a4a;
   --preBackgroundColor: #e1e1e1;
+  --link: #606060;
 }
 
 html[data-theme="dark"] {
@@ -48,7 +54,7 @@ html[data-theme="dark"] {
   --primaryTheme: #16a085;
   --primaryThemeHover: #1abc9c;
   --primaryBg: #20232a;
-  --primaryText: rgba(255, 255, 255, 0.8);
+  --primaryText: #eeeeee;
   /* --secondaryBg: #212121; */
   --secondaryBg: #2b2f38;
   --secondaryText: rgba(255, 255, 255, 0.6);
@@ -61,6 +67,11 @@ html[data-theme="dark"] {
   --tagText: #20232a;
   --preColor: rgba(255, 255, 255, 0.8);
   --preBackgroundColor: #2b2f38;
+  --link: #bfbfbf;
+}
+
+a {
+  color: var(--link);
 }
 
 a:hover {
@@ -70,4 +81,16 @@ a:hover {
 .code-snippet {
   color: var(--preColor);
   background-color: var(--preBackgroundColor);
+}
+
+.fadeup-enter {
+  opacity: 0.01;
+  transform: translateY(20px);
+  transition: opacity 300ms transform 300ms;
+}
+
+.fadeup-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms transform 300ms;
 }

@@ -67,14 +67,14 @@ export const SideNav = () => {
 
   return (
     <div className="h-full fixed flex flex-col justify-center items-center bg-background-primary">
-      <button
-        className={`focus:outline-none text-3xl p-2 text-text-primary cursor-pointer ${
+      <a
+        className={`focus:outline-none text-3xl p-2 cursor-pointer ${
           theme === "light" ? " hover:text-purple-300" : "hover:text-yellow-300"
         }`}
         onClick={toggleTheme}
       >
         {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
-      </button>
+      </a>
       <div className="flex-grow flex flex-col justify-center items-center w-full">
         {sideNavButtons.map(button => {
           return <NavButton key={button.name} button={button} />

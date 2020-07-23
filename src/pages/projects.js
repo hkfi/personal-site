@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { sr, srConfig } from "../utils/sr"
+import { PageTitle } from "../components/pageTitle"
 
 export default () => {
   const { allContentfulRecentProjects } = useStaticQuery(graphql`
@@ -20,6 +21,7 @@ export default () => {
       }
     }
   `)
+
   const revealProjects = useRef([])
   useEffect(() => {
     revealProjects.current.forEach((ref, i) =>
@@ -29,7 +31,7 @@ export default () => {
 
   return (
     <Layout>
-      <div className="text-theme-primary text-5xl">Projects</div>
+      <PageTitle title={"Projects"} />
 
       {allContentfulRecentProjects.edges.map((edge, i) => {
         return (
