@@ -35,7 +35,7 @@ html {
   --primaryThemeHover: #1abc9c;
   --primaryBg: #ebebeb;
   --primaryText: #4a4a4a;
-  --secondaryBg: #dadada;
+  --secondaryBg: #e2e2e2;
   --secondaryText: #7b7b7b;
   --tertiaryBg: #f7f7f7;
   --primaryButtonText: #fff;
@@ -47,6 +47,7 @@ html {
   --preColor: #4a4a4a;
   --preBackgroundColor: #e1e1e1;
   --link: #606060;
+  --overlayColor: rgba(255, 255, 255, 0.7);
 }
 
 html[data-theme="dark"] {
@@ -68,6 +69,7 @@ html[data-theme="dark"] {
   --preColor: rgba(255, 255, 255, 0.8);
   --preBackgroundColor: #2b2f38;
   --link: #bfbfbf;
+  --overlayColor: rgba(0, 0, 0, 0.7);
 }
 
 a {
@@ -81,16 +83,4 @@ a:hover {
 .code-snippet {
   color: var(--preColor);
   background-color: var(--preBackgroundColor);
-}
-
-.fadeup-enter {
-  opacity: 0.01;
-  transform: translateY(20px);
-  transition: opacity 300ms transform 300ms;
-}
-
-.fadeup-enter-active {
-  opacity: 1;
-  transform: translateY(0px);
-  transition: opacity 300ms transform 300ms;
 }

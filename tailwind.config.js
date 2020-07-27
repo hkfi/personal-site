@@ -21,6 +21,7 @@ module.exports = {
       text: {
         primary: "var(--primaryText)",
         secondary: "var(--secondaryText)",
+        link: "var(--link)",
       },
       theme: {
         primary: "var(--primaryTheme)",
@@ -163,6 +164,14 @@ module.exports = {
       "48": "12rem",
       "56": "14rem",
       "64": "16rem",
+      "72": "18rem",
+      "80": "20rem",
+      "88": "22rem",
+      "96": "24rem",
+      "104": "26rem",
+      "112": "28rem",
+      "120": "30rem",
+      "128": "32rem",
       "nav-size": "46px",
     },
     backgroundColor: theme => theme("colors"),

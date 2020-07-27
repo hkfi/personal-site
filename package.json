@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "personal-site",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Personal site of hirokicodes built with Gatsby",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

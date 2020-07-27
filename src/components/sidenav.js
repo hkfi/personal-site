@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { NavButton } from "./navbutton"
 import {
   RiHomeLine,
   RiPencilLine,
@@ -10,6 +8,7 @@ import {
   RiMoonLine,
   RiSunLine,
 } from "react-icons/ri"
+import { NavButton } from "./navbutton"
 
 export const SideNav = () => {
   let localStorageTheme = null
@@ -67,14 +66,15 @@ export const SideNav = () => {
 
   return (
     <div className="h-full fixed flex flex-col justify-center items-center bg-background-primary">
-      <a
-        className={`focus:outline-none text-3xl p-2 cursor-pointer ${
+      <button
+        href={null}
+        className={`text-text-link focus:outline-none text-3xl p-2 cursor-pointer ${
           theme === "light" ? " hover:text-purple-300" : "hover:text-yellow-300"
         }`}
         onClick={toggleTheme}
       >
         {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
-      </a>
+      </button>
       <div className="flex-grow flex flex-col justify-center items-center w-full">
         {sideNavButtons.map(button => {
           return <NavButton key={button.name} button={button} />

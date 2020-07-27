@@ -67,8 +67,8 @@ export const TopNav = () => {
   return (
     <div className="h-full flex flex-row justify-center items-center bg-background-primary">
       <div className="flex-grow flex flex-row justify-center items-center w-full">
-        <a
-          className={`focus:outline-none text-3xl p-5 cursor-pointer ${
+        <button
+          className={`text-text-link focus:outline-none text-3xl p-5 cursor-pointer ${
             theme === "light"
               ? " hover:text-purple-300"
               : "hover:text-yellow-300"
@@ -76,7 +76,7 @@ export const TopNav = () => {
           onClick={toggleTheme}
         >
           {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
-        </a>
+        </button>
         {sideNavButtons.map(button => {
           return (
             <AniLink
