@@ -14,7 +14,7 @@ import {
 export default () => {
   const { allContentfulRecentProjects } = useStaticQuery(graphql`
     query {
-      allContentfulRecentProjects(sort: { fields: priority, order: ASC }) {
+      allContentfulRecentProjects(sort: { fields: priority, order: DESC }) {
         edges {
           node {
             name
