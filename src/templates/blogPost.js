@@ -42,7 +42,10 @@ const BlogPost = ({ data }) => {
         {data.contentfulBlogPost.publishedDate}
       </div>
       <div className="text-xl text-text-primary max-w-4xl">
-        {documentToReactComponents(data.contentfulBlogPost.body.raw, options)}
+        {documentToReactComponents(
+          JSON.parse(data.contentfulBlogPost.body.raw),
+          options
+        )}
       </div>
     </Layout>
   )
