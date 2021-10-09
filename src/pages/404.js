@@ -1,7 +1,7 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import { Layout } from "../components/layout";
 
-export default () => {
+const Error404 = () => {
   return (
     <Layout>
       <div className="flex flex-col h-full justify-center items-center">
@@ -13,5 +13,7 @@ export default () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
+
+export default Error404;

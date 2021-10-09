@@ -1,9 +1,9 @@
-import React from "react"
-import { ContactForm } from "../components/contactForm"
-import Layout from "../components/layout"
-import { PageTitle } from "../components/pageTitle"
+import React from "react";
+import { ContactForm } from "../components/contactForm";
+import { Layout } from "../components/layout";
+import { PageTitle } from "../components/pageTitle";
 
-export default () => {
+const Contact = () => {
   return (
     <Layout>
       <PageTitle title={"Contact"} />
@@ -12,5 +12,7 @@ export default () => {
         <ContactForm />
       </div>
     </Layout>
-  )
-}
+  );
+};
+
+export default Contact;

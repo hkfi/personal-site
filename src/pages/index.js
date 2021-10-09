@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react"
-import Layout from "../components/layout"
-import {
-  RiMailLine,
-  RiStackOverflowLine,
-  RiCodepenLine,
-  RiGithubLine,
-} from "react-icons/ri"
-import { TransitionGroup } from "react-transition-group"
-import { Transition } from "../utils/transition"
+import React, { useEffect, useState } from "react";
+import { Layout } from "../components/layout";
+import { RiStackOverflowLine } from "react-icons/ri";
+import { FiCodesandbox, FiMail, FiGithub } from "react-icons/fi";
+import { TransitionGroup } from "react-transition-group";
+import { Transition } from "../utils/transition";
 
-export default () => {
-  const [isMounted, setIsMounted] = useState(false)
+const Home = () => {
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 500)
-    return () => clearTimeout(timeout)
-  }, [])
-  const nameArray = "Hiroki".split("")
+    const timeout = setTimeout(() => setIsMounted(true), 500);
+    return () => clearTimeout(timeout);
+  }, []);
+  const nameArray = "Hiroki".split("");
 
   return (
     <Layout>
@@ -42,14 +38,15 @@ export default () => {
                     <Transition
                       key={i}
                       show={true}
-                      enter={`transition ease-out delay-${i * 100 +
-                        200} duration-200`}
+                      enter={`transition ease-out delay-${
+                        i * 100 + 200
+                      } duration-200`}
                       enterFrom="opacity-0"
                       enterTo="opacity-100"
                     >
                       <span>{letter}</span>
                     </Transition>
-                  )
+                  );
                 })}
             </TransitionGroup>
           </div>
@@ -63,28 +60,28 @@ export default () => {
               >
                 <div className="flex flex-row text-text-primary text-4xl justify-center">
                   <a href="mailto: hirokicodes@gmail.com">
-                    <RiMailLine className="hover:text-theme-primary" />
+                    <FiMail className="hover:text-theme-primary" />
                   </a>
                   <a
                     href="https://github.com/hirokicodes"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <RiGithubLine className=" hover:text-theme-primary" />
+                    <FiGithub className="hover:text-theme-primary" />
                   </a>
                   <a
                     href="https://stackoverflow.com/users/11485944/hirokicodes"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <RiStackOverflowLine className=" hover:text-theme-primary" />
+                    <RiStackOverflowLine className="hover:text-theme-primary" />
                   </a>
                   <a
-                    href="https://codepen.io/hirokicodes/"
+                    href="https://codesandbox.io/u/hirokicodes/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <RiCodepenLine className=" hover:text-theme-primary" />
+                    <FiCodesandbox className="hover:text-theme-primary" />
                   </a>
                 </div>
               </Transition>
@@ -93,5 +90,7 @@ export default () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
+
+export default Home;

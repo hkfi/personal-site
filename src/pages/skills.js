@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from "react"
-import Layout from "../components/layout"
-import { graphql, useStaticQuery } from "gatsby"
-import { DiJavascript1, DiDart, DiGo, DiPython, DiRuby } from "react-icons/di"
-import { sr, srConfig } from "../utils/sr"
-import { PageTitle } from "../components/pageTitle"
+import React, { useRef, useEffect } from "react";
+import { Layout } from "../components/layout";
+import { graphql, useStaticQuery } from "gatsby";
+import { DiJavascript1, DiDart, DiGo, DiPython, DiRuby } from "react-icons/di";
+import { sr, srConfig } from "../utils/sr";
+import { PageTitle } from "../components/pageTitle";
 
-export default () => {
+const Skills = () => {
   const { allContentfulSkills } = useStaticQuery(graphql`
     query {
       allContentfulSkills(sort: { fields: updatedAt, order: ASC }) {
@@ -16,12 +16,12 @@ export default () => {
         }
       }
     }
-  `)
+  `);
 
-  const revealTitle = useRef(null)
+  const revealTitle = useRef(null);
   useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig())
-  }, [])
+    sr.reveal(revealTitle.current, srConfig());
+  }, []);
   return (
     <Layout>
       <PageTitle title={"Skills"} />
@@ -42,7 +42,7 @@ export default () => {
         </div>
         <div className="text-4xl text-text-primary">Technologies</div>
         <div className="flex flex-wrap text-text-primary justify-center">
-          {allContentfulSkills.edges.map(edge => {
+          {allContentfulSkills.edges.map((edge) => {
             return (
               <div
                 className="rounded m-1 p-1 bg-background-secondary text-text-primary"
@@ -50,10 +50,12 @@ export default () => {
               >
                 {edge.node.name}
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
+
+export default Skills;

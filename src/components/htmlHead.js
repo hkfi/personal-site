@@ -1,7 +1,7 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from "react";
+import { Helmet } from "react-helmet";
 
-const HTMLHeader = props => {
+export const HTMLHeader = () => {
   return (
     <Helmet>
       <title>hirokicodes</title>
@@ -12,7 +12,5 @@ const HTMLHeader = props => {
       />
       <meta name="author" content="hirokicodes" />
     </Helmet>
-  )
-}
-
-export default HTMLHeader
+  );
+};

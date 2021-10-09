@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 export const OverlayedImage = ({
   imageSrc,
@@ -6,19 +6,19 @@ export const OverlayedImage = ({
   isHoverable,
   children,
 }) => {
-  const [hovered, setHovered] = useState(false)
-  const hoveredBackground = `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(${imageSrc}) center center/cover no-repeat`
-  const notHoveredBackground = `linear-gradient(var(--overlayColor), var(--overlayColor)), url(${imageSrc}) center center/cover no-repeat`
+  const [hovered, setHovered] = useState(false);
+  const hoveredBackground = `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(${imageSrc}) center center/cover no-repeat`;
+  const notHoveredBackground = `linear-gradient(var(--overlayColor), var(--overlayColor)), url(${imageSrc}) center center/cover no-repeat`;
 
   function handleOnMouseEnter() {
     if (isHoverable) {
-      setHovered(true)
+      setHovered(true);
     }
   }
 
   function handleOnMouseLeave() {
     if (isHoverable) {
-      setHovered(false)
+      setHovered(false);
     }
   }
 
@@ -30,13 +30,13 @@ export const OverlayedImage = ({
         background: hovered ? hoveredBackground : notHoveredBackground,
       }}
       onMouseEnter={() => {
-        handleOnMouseEnter()
+        handleOnMouseEnter();
       }}
       onMouseLeave={() => {
-        handleOnMouseLeave()
+        handleOnMouseLeave();
       }}
     >
       <div className="text-white">{children}</div>
     </div>
-  )
-}
+  );
+};

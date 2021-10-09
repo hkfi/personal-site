@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
 import {
   RiHomeLine,
   RiPencilLine,
@@ -8,36 +8,36 @@ import {
   RiMailLine,
   RiMoonLine,
   RiSunLine,
-} from "react-icons/ri"
+} from "react-icons/ri";
 
 export const TopNav = () => {
-  let localStorageTheme = null
+  let localStorageTheme = null;
   if (typeof window !== "undefined") {
-    localStorageTheme = localStorage.getItem("theme")
+    localStorageTheme = localStorage.getItem("theme");
   }
 
-  const [theme, setTheme] = useState(localStorageTheme)
+  const [theme, setTheme] = useState(localStorageTheme);
 
   useEffect(() => {
     if (theme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark")
+      document.documentElement.setAttribute("data-theme", "dark");
     }
-  }, [theme])
+  }, [theme]);
 
   function toggleTheme() {
-    document.documentElement.classList.add("color-theme-in-transition")
+    document.documentElement.classList.add("color-theme-in-transition");
     if (theme === "dark") {
-      setTheme("light")
-      localStorage.setItem("theme", "light")
-      document.documentElement.removeAttribute("data-theme")
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+      document.documentElement.removeAttribute("data-theme");
     } else {
-      setTheme("dark")
-      localStorage.setItem("theme", "dark")
-      document.documentElement.setAttribute("data-theme", "dark")
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute("data-theme", "dark");
     }
     window.setTimeout(() => {
-      document.documentElement.classList.remove("color-theme-in-transition")
-    }, 1000)
+      document.documentElement.classList.remove("color-theme-in-transition");
+    }, 1000);
   }
 
   const sideNavButtons = [
@@ -62,7 +62,7 @@ export const TopNav = () => {
       name: "contact",
       icon: <RiMailLine className="text-3xl" />,
     },
-  ]
+  ];
 
   return (
     <div className="h-full flex flex-row justify-center items-center bg-background-primary">
@@ -77,20 +77,18 @@ export const TopNav = () => {
         >
           {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
         </button>
-        {sideNavButtons.map(button => {
+        {sideNavButtons.map((button) => {
           return (
-            <AniLink
+            <Link
               key={button.name}
-              fade
-              duration={0.4}
               to={button.route}
               className="w-full self-center hover:text-theme-primary py-5 flex justify-center"
             >
               {button.icon}
-            </AniLink>
-          )
+            </Link>
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};

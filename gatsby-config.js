@@ -2,7 +2,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-postcss",
-    "gatsby-plugin-transition-link",
     {
       resolve: "gatsby-source-contentful",
       options: {
@@ -20,4 +19,4 @@ module.exports = {
       },
     },
   ],
-}
+};

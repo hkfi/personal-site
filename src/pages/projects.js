@@ -1,17 +1,17 @@
-import React, { useRef, useEffect, Fragment } from "react"
-import Layout from "../components/layout"
-import { graphql, useStaticQuery } from "gatsby"
-import { sr, srConfig } from "../utils/sr"
-import { PageTitle } from "../components/pageTitle"
-import { OverlayedImage } from "../components/overlayedImage"
+import React, { useRef, useEffect, Fragment } from "react";
+import { Layout } from "../components/layout";
+import { graphql, useStaticQuery } from "gatsby";
+import { sr, srConfig } from "../utils/sr";
+import { PageTitle } from "../components/pageTitle";
+import { OverlayedImage } from "../components/overlayedImage";
 import {
   RiShareBoxLine,
   RiFileCodeLine,
   RiWindowLine,
   RiSmartphoneLine,
-} from "react-icons/ri"
+} from "react-icons/ri";
 
-export default () => {
+const Projects = () => {
   const { allContentfulRecentProjects } = useStaticQuery(graphql`
     query {
       allContentfulRecentProjects(sort: { fields: priority, order: DESC }) {
@@ -38,21 +38,21 @@ export default () => {
         }
       }
     }
-  `)
+  `);
 
-  const revealProjects = useRef([])
+  const revealProjects = useRef([]);
   useEffect(() => {
     revealProjects.current.forEach((ref, i) => {
-      sr.reveal(ref, srConfig(i * 100))
-    })
-  }, [])
+      sr.reveal(ref, srConfig(i * 100));
+    });
+  }, []);
 
   const icons = {
     github: <RiFileCodeLine />,
     site: <RiShareBoxLine />,
     web: <RiWindowLine />,
     mobile: <RiSmartphoneLine />,
-  }
+  };
 
   return (
     <Layout>
@@ -66,13 +66,13 @@ export default () => {
           images,
           description,
           type,
-        } = edge.node
+        } = edge.node;
 
         return (
           <Fragment key={i}>
             {/* Laptop view */}
             <div
-              ref={el => (revealProjects.current[i] = el)}
+              ref={(el) => (revealProjects.current[i] = el)}
               className="h-88 w-full max-w-4xl m-2 p-2 hidden md:flex relative overflow-hidden"
             >
               <div className="md:w-full flex flex-col mt-5">
@@ -81,7 +81,7 @@ export default () => {
                   {icons[type]}
                 </div>
                 <div className="flex flex-wrap items-center my-1 md:w-2/5">
-                  {languageAndTechnologies.map(techName => {
+                  {languageAndTechnologies.map((techName) => {
                     return (
                       <div
                         key={`${techName}`}
@@ -89,14 +89,14 @@ export default () => {
                       >
                         {techName}
                       </div>
-                    )
+                    );
                   })}
                 </div>
                 <div className="z-10 text-base text-text-primary bg-background-secondary p-1 rounded shadow my-1 md:w-1/2">
                   {description.description}
                 </div>
                 <div className="flex my-1">
-                  {links.map(link => (
+                  {links.map((link) => (
                     <a
                       key={link.url}
                       className="text-2xl mx-1"
@@ -119,7 +119,7 @@ export default () => {
             </div>
             {/* Mobile view */}
             <div
-              ref={el =>
+              ref={(el) =>
                 (revealProjects.current[
                   i + allContentfulRecentProjects.edges.length
                 ] = el)
@@ -137,7 +137,7 @@ export default () => {
                       {icons[type]}
                     </div>
                     <div className="flex flex-wrap items-center my-1 md:w-2/5">
-                      {languageAndTechnologies.map(techName => {
+                      {languageAndTechnologies.map((techName) => {
                         return (
                           <div
                             key={techName}
@@ -145,14 +145,14 @@ export default () => {
                           >
                             {techName}
                           </div>
-                        )
+                        );
                       })}
                     </div>
                     <div className="text-base text-text-primary p-1 my-1 md:w-1/2 ">
                       {description.description}
                     </div>
                     <div className="flex my-1">
-                      {links.map(link => (
+                      {links.map((link) => (
                         <a
                           key={`mobile${link.url}`}
                           className="text-2xl mx-1"
@@ -169,8 +169,10 @@ export default () => {
               </div>
             </div>
           </Fragment>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
+
+export default Projects;

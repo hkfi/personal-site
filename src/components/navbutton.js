@@ -1,21 +1,19 @@
-import React, { useState } from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import React, { useState } from "react";
+import { Link } from "gatsby";
 
-export const NavButton = ({ button, current }) => {
-  const [buttonHovered, setButtonHovered] = useState(false)
+export const NavButton = ({ button }) => {
+  const [buttonHovered, setButtonHovered] = useState(false);
 
   return (
     <div className="relative w-full">
-      <AniLink
-        fade
-        duration={0.4}
-        to={button.route}
-        className="w-full self-center transition duration-200 ease-in-out hover:text-theme-primary py-5 flex justify-center"
+      <Link
         onMouseEnter={() => setButtonHovered(true)}
         onMouseLeave={() => setButtonHovered(false)}
+        to={button.route}
+        className="w-full self-center transition duration-200 ease-in-out hover:text-theme-primary py-5 flex justify-center"
       >
         {button.icon}
-      </AniLink>
+      </Link>
       <div
         className={`absolute top-0 mt-5 font-semibold bg-background-tag text-theme-primary rounded px-2 py-1 transition ease-in-out duration-200 transform ${
           buttonHovered
@@ -26,5 +24,5 @@ export const NavButton = ({ button, current }) => {
         {button.name}
       </div>
     </div>
-  )
-}
+  );
+};

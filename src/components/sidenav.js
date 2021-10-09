@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import {
   RiHomeLine,
   RiPencilLine,
@@ -7,37 +7,37 @@ import {
   RiMailLine,
   RiMoonLine,
   RiSunLine,
-} from "react-icons/ri"
-import { NavButton } from "./navbutton"
+} from "react-icons/ri";
+import { NavButton } from "./navbutton";
 
 export const SideNav = () => {
-  let localStorageTheme = null
+  let localStorageTheme = null;
   if (typeof window !== "undefined") {
-    localStorageTheme = localStorage.getItem("theme")
+    localStorageTheme = localStorage.getItem("theme");
   }
 
-  const [theme, setTheme] = useState(localStorageTheme)
+  const [theme, setTheme] = useState(localStorageTheme);
 
   useEffect(() => {
     if (theme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark")
+      document.documentElement.setAttribute("data-theme", "dark");
     }
-  }, [theme])
+  }, [theme]);
 
   function toggleTheme() {
-    document.documentElement.classList.add("color-theme-in-transition")
+    document.documentElement.classList.add("color-theme-in-transition");
     if (theme === "dark") {
-      setTheme("light")
-      localStorage.setItem("theme", "light")
-      document.documentElement.removeAttribute("data-theme")
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+      document.documentElement.removeAttribute("data-theme");
     } else {
-      setTheme("dark")
-      localStorage.setItem("theme", "dark")
-      document.documentElement.setAttribute("data-theme", "dark")
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute("data-theme", "dark");
     }
     window.setTimeout(() => {
-      document.documentElement.classList.remove("color-theme-in-transition")
-    }, 1000)
+      document.documentElement.classList.remove("color-theme-in-transition");
+    }, 1000);
   }
 
   const sideNavButtons = [
@@ -62,7 +62,7 @@ export const SideNav = () => {
       name: "Contact",
       icon: <RiMailLine className="text-3xl" />,
     },
-  ]
+  ];
 
   return (
     <div className="h-full fixed flex flex-col justify-center items-center bg-background-primary">
@@ -76,10 +76,10 @@ export const SideNav = () => {
         {theme === "light" ? <RiMoonLine /> : <RiSunLine />}
       </button>
       <div className="flex-grow flex flex-col justify-center items-center w-full">
-        {sideNavButtons.map(button => {
-          return <NavButton key={button.name} button={button} />
+        {sideNavButtons.map((button) => {
+          return <NavButton key={button.name} button={button} />;
         })}
       </div>
     </div>
-  )
-}
+  );
+};

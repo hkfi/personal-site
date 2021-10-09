@@ -1,12 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Layout } from "../components/layout";
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishedDate(formatString: "MMMM Do, YYYY")
@@ -15,23 +14,23 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 const BlogPost = ({ data }) => {
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: node => {
-        const alt = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
-        return <img alt={alt} src={url} />
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const alt = node.data.target.fields.title["en-US"];
+        const url = node.data.target.fields.file["en-US"].url;
+        return <img alt={alt} src={url} />;
       },
     },
     renderMark: {
-      [MARKS.CODE]: code => {
-        return <pre className="code-snippet">{code}</pre>
+      [MARKS.CODE]: (code) => {
+        return <pre className="code-snippet">{code}</pre>;
       },
     },
-  }
+  };
 
   return (
     <Layout>
@@ -48,7 +47,7 @@ const BlogPost = ({ data }) => {
         )}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;
